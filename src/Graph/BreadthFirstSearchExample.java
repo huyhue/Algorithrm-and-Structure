@@ -5,19 +5,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BreadthFirstSearchExample {
-
     private Queue<Node> queue;
     static ArrayList<Node> nodes = new ArrayList<Node>();
 
     static class Node {
-
         int data;
         boolean visited;
-
         public Node(int data) {
             this.data = data;
         }
-
     }
 
     public BreadthFirstSearchExample() {
@@ -32,7 +28,6 @@ public class BreadthFirstSearchExample {
                 nodeIndex = i;
                 break;
             }
-
         }
         if (nodeIndex != -1) {
             for (int i = 0; i < adjacency_matrix[nodeIndex].length; i++) {
@@ -43,22 +38,24 @@ public class BreadthFirstSearchExample {
         }
         return neighbours;
     }
+    
     public void bfs(int adjacency_matrix[][], Node node){
         queue.add(node);
-        node.visited=true;
+        node.visited = true;
         while(!queue.isEmpty()){
             Node element = queue.remove();
-            System.out.print(element.data+" ");
+            System.out.print(element.data + " ");
             ArrayList<Node> neighbours=findNeighbours(adjacency_matrix, element);
             for (int i = 0; i < neighbours.size(); i++) {
                Node n = neighbours.get(i);
-                if (n!=null) {
+                if (n != null) {
                     queue.add(n);
-                    n.visited=true;
+                    n.visited = true;
                 }
             }
         }
     }
+    
     public static void main(String[] args) {
         Node node40 = new Node(40);
         Node node10 = new Node(10);
@@ -88,4 +85,5 @@ public class BreadthFirstSearchExample {
         BreadthFirstSearchExample bfsExample = new BreadthFirstSearchExample();
         bfsExample.bfs(adjacency_matrix, node40);
     }
+     
 }

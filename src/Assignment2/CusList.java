@@ -78,8 +78,7 @@ public class CusList {
             return;
         }
         inOrderFile(n.left, f);
-        String formatStr = "%-5s |   %-7s |   %-5d\n";
-        f.writeBytes(String.format(formatStr, n.infoCus.cCode, n.infoCus.cName, n.infoCus.phone));
+        f.writeBytes(String.format("%-5s |   %-7s |   %-5d\n", n.infoCus.cCode, n.infoCus.cName, n.infoCus.phone));
         inOrderFile(n.right, f);
     }
 
@@ -92,7 +91,7 @@ public class CusList {
             f.setLength(0);
             inOrderFile(n, f);
             f.close();
-            System.out.println("File written successfully!\n\n\n\n\n");
+            System.out.println("File written successfully!\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

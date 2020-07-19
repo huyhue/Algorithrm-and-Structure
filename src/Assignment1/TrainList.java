@@ -23,7 +23,6 @@ public class TrainList {
     // add last
     public void addLast(Train x) {
         NodeTrain p = new NodeTrain(x);
-
         if (isEmpty()) {
             head = tail = p;
         } else {

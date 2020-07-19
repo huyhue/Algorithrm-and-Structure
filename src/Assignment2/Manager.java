@@ -87,7 +87,7 @@ public class Manager {
                     break;
                 case 2:
                     listCus.inputInsert();
-                    System.out.println("**Add Successfully! **");
+                    System.out.println("**Add and Insert Successfully! **");
                     System.out.println();
                     break;
                 case 3:
@@ -101,8 +101,8 @@ public class Manager {
                     break;
                 case 5:
                     System.out.print("Enter customer code: ");
-                    String cCodeSearch = valid.checkInputString();
-                    if (listCus.searchByCode(listCus.root, cCodeSearch) != null) {
+                    String cCode = valid.checkInputString();
+                    if (listCus.searchByCode(listCus.root, cCode) != null) {
                         System.out.println("Found in information");
                     } else {
                         System.out.println("Not Found in information");

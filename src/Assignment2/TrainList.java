@@ -63,7 +63,7 @@ public class TrainList {
             if (s == null || s.trim().equals("")) {
                 break;
             }
-            a = s.split("[|]");
+            a = s.split("[|]");  //lay du lieu tu file
             tcode = a[0].trim();
             train_name = a[1].trim();
             seat = Integer.parseInt(a[2].trim());
@@ -254,7 +254,7 @@ public class TrainList {
         }
         System.out.println("sucessful");
     }
-
+    
     public void balance(ArrayList<Train> t, int i, int j) {
         if (i > j) {
             return;

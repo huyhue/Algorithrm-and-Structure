@@ -28,7 +28,7 @@ public class BookingList {
     }
 
     // add new Booking
-    public Booking inputAndInsert() {
+    public Booking inputInsert() {
         String cCode = "";
         String bCode = "";
         int seat = 0;
@@ -47,7 +47,7 @@ public class BookingList {
     }
 
     public void inputData() {
-        Booking x = inputAndInsert();
+        Booking x = inputInsert();
 
         if (isEmpty()) {
             root = new NodeBooking(x);
@@ -86,7 +86,7 @@ public class BookingList {
             return false;
         }
         if (checkExistTcodeCcode(cCode, tCode)) {
-            System.err.println("Information is already in the list. Please enter agian: ");
+            System.err.println("Information is already in the list. Please enter again: ");
             return false;
         }
         if (nodeTrain.infoTrain.seat == nodeTrain.infoTrain.booked) {
@@ -107,7 +107,6 @@ public class BookingList {
         inOrder(p.left);
         visit(p);
         inOrder(p.right);
-
     }
 
     // check exist customer and bus
